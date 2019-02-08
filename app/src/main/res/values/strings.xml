@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Tutorial-Room</string>
+
+    <!--Gender-->
+    <string-array name="gender">
+        <item>F</item>
+        <item>M</item>
+    </string-array>
 </resources>

@@ -15,8 +15,12 @@ class RoomTutorialApplication: Application() {
 
         applicationComponent = DaggerApplicationComponent
             .builder()
-            .userListModule(UserListModule())
+            .homeModule(HomeModule())
+            .userModule(UserModule())
+            .bookModule(BookModule())
+            .searchModule(SearchModule())
             .databaseModule(DatabaseModule())
+            .issueBookModule(IssueBookModule())
             .applicationContextModule(ApplicationContextModule(this))
             .build()
     }

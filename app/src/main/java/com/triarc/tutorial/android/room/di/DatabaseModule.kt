@@ -5,6 +5,8 @@ import android.arch.persistence.room.Room
 import com.triarc.tutorial.android.room.storage.dao.UserDao
 import com.triarc.tutorial.android.room.storage.RoomTutorialDatabase
 import com.triarc.tutorial.android.room.storage.DatabaseMigrations
+import com.triarc.tutorial.android.room.storage.dao.BookDao
+import com.triarc.tutorial.android.room.storage.dao.RegisterDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,7 +19,7 @@ class DatabaseModule {
 
     object Database {
         const val NAME    = "room_tutorial_database.db"
-        const val VERSION = 1
+        const val VERSION = 2
     }
 
     @Provides
@@ -32,4 +34,12 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun provideUserDao(database: RoomTutorialDatabase): UserDao = database.userDao()
+
+    @Provides
+    @Singleton
+    fun provideBookDao(database: RoomTutorialDatabase): BookDao = database.bookDao()
+
+    @Provides
+    @Singleton
+    fun provideRegisterDao(database: RoomTutorialDatabase): RegisterDao = database.registerDao()
 }
